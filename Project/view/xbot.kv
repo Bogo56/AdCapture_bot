@@ -1,0 +1,55 @@
+#:kivy 2.0
+
+<MenuButton@Button>
+    source:None
+    size_hint_x: None
+    width: capture_image.width
+    background_color: 0,0,0,0
+    Image:
+        id:capture_image
+        source: root.source
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        allow_stretch: "true"
+        width:359
+        height:70
+
+<MainMenuScreen>:
+    GridLayout:
+        cols:1
+        padding:70,50
+        spacing:40
+        AnchorLayout:
+            anchor_x:"center"
+            MenuButton:
+                source:"resources/buttons/Light_blue_normal.png"
+                on_press: 
+                    app.root.current = "capture_menu_screen"
+                    root.manager.transition.direction = "left"
+        AnchorLayout:
+            anchor_x:"center"
+            MenuButton:
+                source:"resources/buttons/Light_red.png"
+                on_press: 
+                    app.root.current = "db_screen"
+                    root.manager.transition.direction = "left"
+        AnchorLayout:
+            anchor_x:"center"
+            MenuButton:
+                source:"resources/buttons/Light_green.png"
+        AnchorLayout:
+            anchor_x:"center"
+            MenuButton:
+                source:"resources/buttons/Light_orange.png"
+
+
+
+<ScreenManager>:
+    MainMenuScreen:
+        name:"main_menu_screen"
+    CaptureMenuScreen:
+        name:"capture_menu_screen"
+    DataBaseScreen:
+        name:"db_screen"
+
+    
