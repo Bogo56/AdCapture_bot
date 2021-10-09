@@ -94,8 +94,8 @@ class AdLibCapture:
         self._driver.close()
 
 
-    def capture_all_pages(self, scrolls=3, country="ALL"):
-        pages=Model.get_all()
+    def capture_all_pages(self,pages_list,scrolls=3, country="ALL"):
+        pages = pages_list
         status = ""
         res = self._construct_capture_flow(page_id=pages[0][2],
                                      page_name=pages[0][1],
@@ -110,7 +110,7 @@ class AdLibCapture:
                                          scrolls=scrolls,
                                          policy=False,
                                          country=country)
-            status.append(res)
+            status += res
         self._driver.close()
         return status
 

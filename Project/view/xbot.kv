@@ -37,10 +37,16 @@
             anchor_x:"center"
             MenuButton:
                 source:"resources/buttons/Light_green.png"
+                on_press: 
+                    app.root.current = "add_pages_screen"
+                    root.manager.transition.direction = "left"
         AnchorLayout:
             anchor_x:"center"
             MenuButton:
                 source:"resources/buttons/Light_orange.png"
+                on_press: 
+                    app.root.current = "fast_flow_screen"
+                    root.manager.transition.direction = "left"
 
 
 
@@ -51,5 +57,9 @@
         name:"capture_menu_screen"
     DataBaseScreen:
         name:"db_screen"
+    AddPagesScreen:
+        name:"add_pages_screen"
+    FastFlowScreen:
+        name:"fast_flow_screen"
 
     

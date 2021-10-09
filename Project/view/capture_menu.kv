@@ -39,7 +39,7 @@
             spacing: 20
             TextInput:
                 id: page_name
-                hint_text: 'page_name e.b Dev.bg - Dev_bg (no $*/!?%)'
+                hint_text: 'page_name / Dev.bg = Dev_bg'
                 multiline: False
                 size_hint: 1,None
                 height: "35dp"
@@ -181,7 +181,7 @@
                 do_scroll_x: False
                 do_scroll_y: True
                 bar_color: 0.4,0.5,0.8,1
-                bar_width: 7
+                bar_width: 9
                 scroll_type: ['bars', 'content']
                 GridLayout:
                     id: added_pages
@@ -196,7 +196,7 @@
                     id:scroll_two
                     size_hint_y: None
                     size: self.texture_size
-                    text: 'really some amazing text\n' * 100
+                    text: ''
                     color: 1,0,0,0.7
                     bold: "true"
     RelativeLayout:
@@ -208,7 +208,6 @@
             on_press: 
                 app.root.current = "main_menu_screen"
                 root.manager.transition.direction = "right"
-
         TextInput:
             id: folder
             hint_text: 'specify folder(optional)'
@@ -231,6 +230,7 @@
             size_hint: 0.15,None
             height: "35dp"  
             pos_hint:{"y":0.02, "right":0.98}
+            on_release: root.convert_send()
         Button:
             text: "Convert to PDF"
             size_hint: 0.15,None

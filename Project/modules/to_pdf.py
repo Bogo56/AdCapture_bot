@@ -35,15 +35,17 @@ class PdfBuilder:
             image_files = [Image.open(image) for image in images]
             final_images = [file.convert('RGB') for file in image_files]
             if len(final_images) > 1:
-                final_images[0].save(f"{cls.main_dir}/{folder}/Ads_Preview_{today}.pdf",
+                destination = f"{cls.main_dir}/{folder}/Ads_Preview_{today}.pdf"
+                final_images[0].save(destination,
                                      save_all=True,
                                      append_images=final_images[1:],
                                      quality=quality)
             else:
-                final_images[0].save(f"{cls.main_dir}/{folder}/Ads_Preview_{today}.pdf")
-            return f"Successfully Created Ads_Preview_{today}.pdf"
+                destination = f"{cls.main_dir}/{folder}/Ads_Preview_{today}.pdf"
+                final_images[0].save(destination)
+            return (f"Successfully Created Ads_Preview_{today}.pdf",destination)
         except:
-            return "Folder Not Found or Empty"
+            return ("Folder Not Found or Empty",None)
 
 
 
