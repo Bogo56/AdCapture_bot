@@ -2,6 +2,11 @@
 #:kivy 2.0
 
 <DataBaseScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "resources/background/app_bg_2.png"
     FloatLayout:
         Label:
             id: profile_log

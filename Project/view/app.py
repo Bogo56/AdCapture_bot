@@ -13,6 +13,7 @@ from kivy.config import Config
 
 Config.set('graphics', 'width', '800')
 Config.set('graphics', 'height', '600')
+Config.set('kivy','window_icon','resources/icons/1260673.png')
 Config.write()
 
 Builder.load_file("capture_menu.kv")
@@ -78,8 +79,8 @@ class CaptureMenuScreen(Screen):
 
     def clear_list(self):
         self.pages_list.clear()
-        for el in self.added_pages.children:
-            self.added_pages.remove_widget(el)
+        self.added_pages.clear_widgets()
+
 
     def capture_pages(self):
         check_options = self._check_options()
@@ -225,7 +226,7 @@ class DataBaseScreen(Screen):
         if color == "red":
             self.ids.profile_log.color = (1, 0, 0, 0.7)
         else:
-            self.ids.profile_log.color = (0, 0, 0, 0.7)
+            self.ids.profile_log.color = (0, 0, 0, 0.8)
 
 
 class AddPagesScreen(Screen):
