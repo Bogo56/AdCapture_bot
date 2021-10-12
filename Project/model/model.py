@@ -1,11 +1,14 @@
 import sqlite3
 from sqlite3 import IntegrityError
+from pathlib import Path
 
+cur_dir = Path.cwd()
+db_dir = cur_dir.parent.joinpath("model", "database.db")
 
 
 class Model:
 
-    db = "D:\Programming\Work_Projects\ScreenShotApp(new)\Project\model\database.db"
+    db = db_dir
 
     @classmethod
     def _create_pages_table(cls):

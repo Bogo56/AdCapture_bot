@@ -6,10 +6,10 @@ from selenium.webdriver import ActionChains
 options = webdriver.ChromeOptions()
 options.add_argument("headless")
 options.add_argument("--start-maximized")
-# options.add_argument(r"print-to-pdf='D:\Programming\Work_Projects\ad_lib.pdf'")
 
-driver=webdriver.Chrome("../../Drivers/chromedriver.exe", options=options)
-driver.implicitly_wait(10)
+
+driver=webdriver.Chrome("../Drivers/chromedriver.exe", options=options)
+driver.implicitly_wait(15)
 
 
 driver.get("https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=BG&view_all_page_id=195756373912776&sort_data[direction]=desc&sort_data[mode]=relevancy_monthly_grouped&search_type=page&media_type=all")

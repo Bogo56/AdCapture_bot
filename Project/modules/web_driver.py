@@ -5,6 +5,7 @@ from Project.model.model import Model
 import time,datetime
 import random,re
 import urllib
+from pathlib import Path
 
 today = datetime.datetime.today().strftime("%d_%m")
 fb_url = "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country={}" \
@@ -15,10 +16,11 @@ keyword_url = "https://www.facebook.com/ads/library/?active_status=all&ad_type=a
               "&media_type=all"
 screen_dir=create_dir()
 condition = "\s0 резултата"
+driver_loc = Path.cwd().parent.parent.joinpath("Drivers","chromedriver.exe")
 
 class BuildWebDriver:
 
-    default_driver= "D:\Programming\Work_Projects\ScreenShotApp(new)\Drivers\chromedriver.exe"
+    default_driver= driver_loc
 
     def __init__(self,headless=True):
         self._options = webdriver.ChromeOptions()

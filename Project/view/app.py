@@ -1,5 +1,6 @@
 import time
-
+import os, sys
+from kivy.resources import resource_add_path, resource_find
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager,Screen
@@ -94,6 +95,7 @@ class CaptureMenuScreen(Screen):
                 res = CaptureBot().capture_pages(pages=pages,
                                                country=country,
                                                scrolls=scrolls)
+                self.clear_list()
                 self.ids.scroll_two.text = res
             else:
                 self.ids.scroll_two.text = "Add a Page First"
@@ -318,4 +320,6 @@ class XBotApp(App):
 
 
 if __name__ == '__main__':
+    if hasattr(sys, '_MEIPASS'):
+        resource_add_path(os.path.join(sys._MEIPASS))
     XBotApp().run()
