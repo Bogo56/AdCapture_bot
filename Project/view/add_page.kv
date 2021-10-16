@@ -88,6 +88,8 @@
             size_hint: 0.22,None
             height: "35dp"
             pos_hint:{"y":0.02, "right":0.982}
+            on_release: root.delete_all()
+            on_release: db_console.text = ""
         Button:
             text: "Back"
             size_hint: 0.18,None

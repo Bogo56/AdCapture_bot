@@ -9,9 +9,16 @@ today_folder=check_dir().parts[-1]
 
 
 class PdfBuilder:
+    """
+    This class is used to create a single pdf file from all the screenshots, that is being send
+    afterwards by email. It has the functionality of defining the pdf quality (file size reduction).
+    """
 
+    # Location for creating the PDFs. It's the same one as the screenshots directory
     main_dir = pathlib.Path.cwd().parent.joinpath(f"Ad_library_screens")
 
+    # Getting all the filepaths of the screenshots to be collected in the pdf file
+    # Used internally by the class method convert_to_pdf
     @classmethod
     def _get_files(cls, default=True, specify_folder=None):
         if default:
@@ -20,7 +27,6 @@ class PdfBuilder:
             final_dir = cls.main_dir.joinpath(f"{specify_folder}")
         all_images = list(final_dir.glob("*.png"))
         return all_images
-
 
     @classmethod
     def convert_to_pdf(cls, default=True, specify_folder=None, quality=95):
@@ -43,13 +49,12 @@ class PdfBuilder:
             else:
                 destination = f"{cls.main_dir}/{folder}/Ads_Preview_{today}.pdf"
                 final_images[0].save(destination)
-            return (f"Successfully Created Ads_Preview_{today}.pdf",destination)
+            return (f"Successfully Created Ads_Preview_{today}.pdf", destination)
         except:
-            return ("Folder Not Found or Empty",None)
+            return ("Folder Not Found or Empty", None)
 
 
-
-
-if __name__ =="__main__":
+if __name__ == "__main__":
+    # Used for testing in Development
     res = PdfBuilder.convert_to_pdf(default=True, quality=80, specify_folder="screenshots_49_09")
     print(res)

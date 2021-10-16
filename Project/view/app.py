@@ -8,9 +8,14 @@ from kivy.lang import Builder
 from kivy.factory import Factory
 from kivy.properties import ObjectProperty
 from Project.model.model import Model
-from Project.modules.controller import  CaptureBot
+from Project.modules.controller import CaptureBot
 from kivy.config import Config
 
+
+"""
+This is the main module used for managing the Graphical Interface (GUI). It is based on the kivy framework
+It connects the User interface of the app with the controller module and it's CaptureBot class
+"""
 
 Config.set('graphics', 'width', '800')
 Config.set('graphics', 'height', '600')
@@ -42,7 +47,7 @@ class CaptureMenuScreen(Screen):
                 if len(self.pages_list)>0:
                     id_list = [id[1] for id in self.pages_list]
                     if id in id_list:
-                        self.ids.scroll_two.text ="ID Already Added"
+                        self.ids.scroll_two.text = "ID Already Added"
                         return None
 
                 page_id = (page,id)
@@ -56,7 +61,6 @@ class CaptureMenuScreen(Screen):
         else:
             self.ids.scroll_two.text = "Must Fill Both Fields"
 
-
     def add_from_db(self):
         all_pages=Model.get_all()
         all_pages = [page[1:] for page in all_pages ]
@@ -65,7 +69,6 @@ class CaptureMenuScreen(Screen):
                                   page_id=page[1])
             self.pages_list.add(page)
         print(all_pages)
-
 
     def remove_button(self,btn):
         btn_id=int(btn.id)
@@ -77,11 +80,9 @@ class CaptureMenuScreen(Screen):
         self.added_pages.remove_widget(btn)
         print(self.pages_list)
 
-
     def clear_list(self):
         self.pages_list.clear()
         self.added_pages.clear_widgets()
-
 
     def capture_pages(self):
         check_options = self._check_options()
@@ -92,7 +93,7 @@ class CaptureMenuScreen(Screen):
                 self._log_color("black")
                 self.ids.scroll_two.text = "Started Capturing...."
                 pages=list(self.pages_list)
-                res = CaptureBot().capture_pages(pages=pages,
+                res = CaptureBot.capture_pages(pages=pages,
                                                country=country,
                                                scrolls=scrolls)
                 self.clear_list()
@@ -107,7 +108,7 @@ class CaptureMenuScreen(Screen):
             country = self.ids.key_country.text
             scrolls = int(self.ids.key_scroll.text)
             keyword = str(self.ids.keyword.text)
-            res = CaptureBot().capture_keyword(keyword=keyword,
+            res = CaptureBot.capture_keyword(keyword=keyword,
                                                   country=country,
                                                   scrolls=scrolls)
             self._log_color("black")
@@ -145,8 +146,7 @@ class CaptureMenuScreen(Screen):
                 self._log_color("red")
                 self.ids.scroll_two.text = "Email Failed"
 
-
-
+    # Private methods used inside of the other methods
     def _add_page_button(self,page_name,page_id):
         page_button = Factory.ListButton(text=f"{page_name}")
         id_list = [id[1] for id in self.pages_list]
@@ -155,6 +155,7 @@ class CaptureMenuScreen(Screen):
             page_button.bind(on_press=self.remove_button)
             self.added_pages.add_widget(page_button)
 
+    # Validating options chosen
     def _check_options(self):
         if self.ids.scroll.text == "Scrolls" or self.ids.country.text == "Country":
             self._log_color("red")
@@ -162,7 +163,8 @@ class CaptureMenuScreen(Screen):
             return False
         else:
             return True
-    
+
+    # Validating used for the same things but connected to another widget
     def _check_options_key(self):
         if self.ids.key_scroll.text == "Scrolls" or self.ids.key_country.text == "Country":
             self._log_color("red")
@@ -195,6 +197,7 @@ class CaptureMenuScreen(Screen):
         else:
             return True
 
+    # Changing console message color
     def _log_color(self,color):
         if color == "red":
             self.ids.scroll_two.color = (1, 0, 0, 0.7)
@@ -253,6 +256,11 @@ class AddPagesScreen(Screen):
             output_text += f"{page}\n"
         self.ids.db_console.text = output_text
 
+    def delete_all(self):
+        res = CaptureBot.delete_all_pages()
+        self._log_color("black")
+        self.ids.db_log.text = res
+
     def remove_page(self):
         id = self.ids.remove_page.text
         check_id = self._check_id_input(input=id)
@@ -289,7 +297,7 @@ class FastFlowScreen(Screen):
 
     def fast_capture(self):
         page_num = len(Model.get_all())
-        res = CaptureBot().capture_from_database()
+        res = CaptureBot.capture_from_database()
         self.ids.scroll_text.text = res
         if page_num <= 7:
             quality = 90
@@ -308,10 +316,9 @@ class FastFlowScreen(Screen):
             self.ids.sent_label.text = "EMAIL FAILED"
 
 
-
-
 class ScreenSwitch(ScreenManager):
     pass
+
 
 class XBotApp(App):
     def build(self):
