@@ -15,7 +15,7 @@ class EmailSender:
     # and read it as an environmental variable, so it is not visible. But no need for fancy stuff here.#
 
     user = "Xplora.mailbot@gmail.com"
-    password = "Xplora16!"
+    password = "*******"
     default_body = "Hey, Marketing Ninja. " \
                    "It's me the X_Bot and I'm sending you the" \
                    " requested ScreenCapture file. Enjoy!"
