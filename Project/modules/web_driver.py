@@ -87,7 +87,7 @@ class AdLibCapture:
 
         # Clicking the privacy policy button to allow page scrolling
         if policy:
-            button=self._driver.find_element_by_css_selector("button[data-testid='cookie-policy-dialog-accept-button']")
+            button=self._driver.find_element_by_css_selector("button[data-testid='cookie-policy-manage-dialog-accept-button']")
             button.click()
         # Randomizing time between actions to mimic human behaviour
         time.sleep(random.randint(4,6))
@@ -181,5 +181,3 @@ if __name__ == "__main__":
     ready_driver = driver.build_driver()
     keyword_bot = AdLibCapture(ready_driver,type="keyword")
     keyword_bot.capture_by_keyword(keyword="Пръдня",scrolls=7)
-
-
