@@ -1,6 +1,9 @@
 from email.message import EmailMessage
 from smtplib import SMTP_SSL
-import ssl
+import ssl, os 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 
@@ -10,12 +13,8 @@ class EmailSender:
     This class is used for attaching the screenshots of the pages and sending them to an email
     """
 
-    # Since this is a basic gmail account made specially for this purpose, e.g there is no sensitive data in it,
-    # I'm allowing myself to hardcode the password. BUT in a real case scenario I would store it in a .env file
-    # and read it as an environmental variable, so it is not visible. But no need for fancy stuff here.#
-
-    user = "Xplora.mailbot@gmail.com"
-    password = "*******"
+    user = os.environ["email"]
+    password = os.environ["pass"]
     default_body = "Hey, Marketing Ninja. " \
                    "It's me the X_Bot and I'm sending you the" \
                    " requested ScreenCapture file. Enjoy!"
@@ -53,7 +52,7 @@ if __name__ == "__main__":
     # Used for testing during development
 
     email_sender=EmailSender
-    email_sender.build_mail(recipient="mussashi50@gmail.com",
+    email_sender.build_mail(recipient="email",
                             attachment="D:\Programming\Work_Projects\ScreenShotApp(new)\Project\Ad_library_screens\screenshots_10_10\Ads_Preview_10_10.pdf",
                              )
     email_sender.send_mail()
