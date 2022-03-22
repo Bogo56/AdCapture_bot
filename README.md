@@ -49,10 +49,19 @@
 <p>
   <img src="https://img.shields.io/badge/Imaging-Pillow-green?style=for-the-badge">
   <img src="https://img.shields.io/badge/Web Scrape-Selenium-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Packaging-PyInstaller-blue?style=for-the-badge">
 </p>
 
 ## About The Project
-Ever since I learned JavaScript, my focus was pointed primarily towards NodeJS ( and Python), since backend development is what I'm most passionate about. After a while I realized that that my frontend skills were lagging behind. I knew that frontend is important (even though I'm not very excited about it). So I decided on upgrading my competencies in using JavaScipt in it's natural habitat 😁 - on the client-side. So I made this App. It'a an SPA (vanilla JS, no React), that renders different recipes. I wanted to make it authentic - so I used bulgarian recipes. I generated the data ( almost 900 recipes) by using python to scrape popular bulgarian cooking websites and modeling that into a database, serving it trough a simple API.
+This is an app that is inspired by a **REAL-world scenario**, that we **had at the company** (Digital-Marketing company) I'm working at. The idea of it was to **automate some repetative tasks** that me and my colleagues had to do. The **goal of this app was to save some time for my team and increase it's productivity** by spending it on much more usefull tasks.
+
+## Description of the problem
+So basically Facebook has a section - (https://www.facebook.com/ads/library) - where anyone can see if a certain page currently has active ads and what they are. You can also filter your search by category, keywords, countries etc. A lot of times we needed to manually visit the page, make multiple screenshots for different competitors that a client has and then collect all those screenshots and send them on email to the client. Sometimes this was done a couple of times a week - loosing about 2-3 hours of productive time per person per month.
+
+### And the Solution
+I wanted to create a solution that would be usefull to all my teammates and not just myself. That's why a simple script was not enough. So i had to create an app that could be used by anyone and mainly non-coders. This is how i came up with this project.
+
+## 
 
 I have **deployed the Flask API on my own Ubuntu 18.04 server**, and the frontend on **Heroku** (to save some time). You can find the link to the project in the next section.
 
