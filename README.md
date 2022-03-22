@@ -63,15 +63,17 @@ I wanted to create a solution that would be usefull to all my teammates and not 
 
 ## How To Use!
 1. **Insert the Id's of the pages you would like to take screenshots of into the Database.**
-       ![](https://res.cloudinary.com/dawb3psft/image/upload/v1647941550/Portfolio/Insert_page.gif)
+       ![](gifs/Insert_page.gif)
 
 2. **Add the email you'll be sending to.**
    - once inserted, the data is persisted in the app - so you don't have to configure it every time
-     ![](https://res.cloudinary.com/dawb3psft/image/upload/v1647941885/Portfolio/Insert_email.gif)
+     ![](gifs/Insert_email.gif)
 
 3 **Choose your mode**
-  a. **Fully automated mode**
+  * **Fully automated mode**
     - If all you want to do is scrape the competitor pages in the database and send the generated PDF to the client - just use this mode.
+    
+      ![](gifs/fast_flow.gif)
     
   
 ### Fully automated mode
