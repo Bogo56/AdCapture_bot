@@ -73,7 +73,7 @@ I wanted to create a solution that would be usefull to all my teammates and not 
   * **Fully automated mode**
     - If all you want to do is scrape the competitor pages in the database and send the generated PDF to the client - just use this mode.
     
-      ![](gifs/fast_flow.gif)
+      ![](gifs/fast_flow_2.gif)
     
   
 ### Fully automated mode
