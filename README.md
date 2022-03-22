@@ -59,9 +59,9 @@ This is an app that is inspired by a **REAL-world scenario**, that we **had at t
 So basically Facebook has a section - (https://www.facebook.com/ads/library) - where anyone can see if a certain page currently has active ads and what they are. You can also filter your search by category, keywords, countries etc. A lot of times we needed to manually visit the page, make multiple screenshots for different competitors that a client has and then collect all those screenshots and send them on email to the client. Sometimes this was done a couple of times a week - loosing about 2-3 hours of productive time per person per month.
 
 ### And the Solution
-I wanted to create a solution that would be usefull to all my teammates and not just myself. That's why a simple script was not enough. So i had to create an app that could be used by anyone and mainly non-coders. This is how I came up with this project.
+I wanted to create a solution that would be usefull to all my teammates and not just myself. That's why a simple script was not enough. So i had to create an app that could be used by anyone and mainly non-coders. This is how I came up with this project. It basically visits every competitor, scrolls trough all the ads, makes a screenshot, generates a PDF from all screenshots in the end and sends it on email.
 
-## How To Use!
+## How To Use
 1. **Insert the Id's of the pages you would like to take screenshots of into the Database.**
        ![](gifs/Insert_page.gif)
 
@@ -74,38 +74,35 @@ I wanted to create a solution that would be usefull to all my teammates and not 
     - If all you want to do is scrape the competitor pages in the database and send the generated PDF to the client - just use this mode.
     
       ![](gifs/fast_flow_2.gif)
+      
+  * **Manual mode**
+    - This is if you want to be more specific about the type of scraping that should be done - choosing a country, scroll depth, keyword searching, manually adding pages for single scraping.  
     
-  
-### Fully automated mode
-* In this mode the app does all the work of making the screeshots, generating a PDF from them and sending it to the chosen email - with the click of a single button.
+      ![](gifs/manual_mode_2.gif)
+    
+    
+    - In this mode you can also make screenshots based on keywords insted of using specific pages.
+
 
 
 ## Project Workflow
 Here, I'm outlining very briefly the phases that the project went trough from start to finish.
 
-### Phase 1 - Creating Data
-Before creating the app, I needed some data. In this case I needed a lot of recipes - at least a couple of hundred. So where do I get that data? Well, I actually decided to create it myself, or let's use the term "borrow it"😁 from another site (only for the sake of the project). SOO I did a research on the popular cooking websites in Bulgaria, and chose one with proper structure for scraping. Then I wrote a couple of scripts in Python using the Pandas Library that:
-
-  1. Scraped the summary info of the recipes, shown in the "All Recipes Section", while going trough all results pages - inserting the info into a DB.
-  2. Visited every individual recipe page and scraped it's full description and ingredients - updating the recipe data in the DB.
-  3. Scraping once more - this time downloading the images (that I later upload on Cloudinary) - updating the recipes with the image links in the DB.
+### Phase 1 - Manipulating the browser programatically - SELENIUM
+First I needed a tool to automate browser navigation - this is where I used Selenium - one of the most popular libraries for software testing and browser automation. I used it to run Chrome in headless mode, which allowed me to resize the window a looot, and thus get all the ads in a single screenshot. I also used Selenium for navigation - clicking, closing, scrolling etc.
   
-### Phase 2 - Making Data Accessible
-So now that I had the data, I had to make it available to be consumed by another entity - e.g. frontend. So I created a simple API in Flask that delivered the data
-to my frontend application.
+### Phase 2 - Resizing, compressing and combining all images into a single file - PILLOW
+Next I had to compress the images, so that i can send them as attachments to an email, I also needed to reduce all scrrenshots to a single file - PDF seemed like the most appropriate type. So I used pillow, which made the whole process a breeze.
 
-### Phase 3 - Creating the Frontend
-Now that I have laid the foundation, I could start working on the App itself.
+### Phase 3 - Persisting data - SQLite
+I needed a way to store data - to achieve real automation. So I used SQlite because it's embedded and self-contained. Making it easy to be packaged inside the app.
 
-### Phase 4 - Deployment
-I have deployed the simple Flask API to my own server in the beginning, so I could test the frontend app during development with it.
+### Phase 4 - Making the functionality available to people with no coding skills - KIVY
+Now it was the time to create a real usable app out of all that functionality. I decided to use KIVY - since I had some previous experince with it. THe main perks were that it was possible to build a simple but intuitive interface and also to package the whole thing into a single executable file, so that others can use it on their PC. There are a lot of functionalities with this framework, which were quite handy.
 
-I deployed the frontend to Heroku - since this would save me some time with server configuration.
+### Phase 5 - Distributing the app - PyInstaller
+I used PyInstaller to package all of the modules and files and make them executable through a single .exe file.
 
-## Project Structure
-
-* All scraping scripts are placed in `./api_python/seed` folder
-* The actual frontend App in `./javascript` folder follows the MVC architecture.
 
 ```
 📦 RecipeApp
