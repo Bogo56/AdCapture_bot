@@ -23,7 +23,8 @@
 
 <p align="center">
   <a href="#about-the-project">About The Project</a> •
-  <a href="#check-out-the-project">Check out the Project</a> •
+  <a href="#description-of-the-problem">Description of the problem</a> •
+  <a href="#how-to-use">How to use</a> •
   <a href="#project-workflow">Project Workflow</a> •
   <a href="#project-structure">Project Structure</a> 
 </p>
