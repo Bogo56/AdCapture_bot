@@ -7,3 +7,7 @@
 /.idea/
 /copy_files_package/
 /Project/.idea/
+/.env
+/Project/__pycache__
+/Project/model/__pycache__
+/Project/modules/__pycache__
