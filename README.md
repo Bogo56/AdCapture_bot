@@ -93,7 +93,7 @@ Here, I'm outlining very briefly the phases that the project went trough from st
 First I needed a tool to automate browser navigation - this is where I used Selenium - one of the most popular libraries for software testing and browser automation. I used it to run Chrome in headless mode, which allowed me to resize the window a looot, and thus get all the ads in a single screenshot. I also used Selenium for navigation - clicking, closing, scrolling etc.
   
 ### Phase 2 - Resizing, compressing and combining all images into a single file - PILLOW
-Next I had to compress the images, so that i can send them as attachments to an email, I also needed to reduce all scrrenshots to a single file - PDF seemed like the most appropriate type. So I used pillow, which made the whole process a breeze.
+Next I had to compress the images, so that i can send them as attachments to an email, I also needed to reduce all screenshots to a single file - PDF seemed like the most appropriate type. So I used pillow, which made the whole process a breeze.
 
 ### Phase 3 - Persisting data - SQLite
 I needed a way to store data - to achieve real automation. So I used SQlite because it's embedded and self-contained. Making it easy to be packaged inside the app.
