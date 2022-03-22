@@ -176,7 +176,7 @@ if __name__ == "__main__":
     # pages=[(0,3859501477945,"Kaufland"),(1,312617136169551,"SanaMedic"),(2,24078343402632998,"GoSport"),(3,11839230704429977,'Dev.bg'),(4,475170749544771,"Body_Aesthetics"),(5,513523225491395,"Viessman")]
     # page_bot.capture_bulk_pages(pages)
 
-    ## Capture By Keyword
+    ## Capture By Keywords
     driver = BuildWebDriver()
     ready_driver = driver.build_driver()
     keyword_bot = AdLibCapture(ready_driver,type="keyword")
