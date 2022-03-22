@@ -180,4 +180,4 @@ if __name__ == "__main__":
     driver = BuildWebDriver()
     ready_driver = driver.build_driver()
     keyword_bot = AdLibCapture(ready_driver,type="keyword")
-    keyword_bot.capture_by_keyword(keyword="Пръдня",scrolls=7)
+    keyword_bot.capture_by_keyword(keyword="Technology",scrolls=7)
