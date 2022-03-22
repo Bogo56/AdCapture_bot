@@ -61,11 +61,19 @@ So basically Facebook has a section - (https://www.facebook.com/ads/library) - w
 ### And the Solution
 I wanted to create a solution that would be usefull to all my teammates and not just myself. That's why a simple script was not enough. So i had to create an app that could be used by anyone and mainly non-coders. This is how I came up with this project.
 
-## How To Use
-1. Insert the id's of the pages you would like to take screenshots of into the Database.
-2. Add the email you're sending to.
-  a. once inserted the data is persisted for every time the app is opened   
+## How To Use!
+1. **Insert the Id's of the pages you would like to take screenshots of into the Database.**
+       ![](https://res.cloudinary.com/dawb3psft/image/upload/v1647941550/Portfolio/Insert_page.gif)
 
+2. **Add the email you'll be sending to.**
+   - once inserted, the data is persisted in the app - so you don't have to configure it every time
+     ![](https://res.cloudinary.com/dawb3psft/image/upload/v1647941885/Portfolio/Insert_email.gif)
+
+3 **Choose your mode**
+  a. **Fully automated mode**
+    - If all you want to do is scrape the competitor pages in the database and send the generated PDF to the client - just use this mode.
+    
+  
 ### Fully automated mode
 * In this mode the app does all the work of making the screeshots, generating a PDF from them and sending it to the chosen email - with the click of a single button.
 
