@@ -1,24 +1,23 @@
 <h1 align="center">
   <br>
-  <a href="https://recipe-app-2022.herokuapp.com/#467"><img src="https://res.cloudinary.com/dawb3psft/image/upload/v1647878417/Portfolio/logo.png" alt="RecipeAPP" width="300"></a>
+  <a href=""><img src="https://res.cloudinary.com/dawb3psft/image/upload/v1647932180/Portfolio/xbot.png" alt="AdCaptureBot" width="300"></a>
 </h1>
 
-<h4 align="center">Personal Project - Creating a Frontend JS App </h4>
+<h4 align="center">Python-Kivy App for automated monitoring of competitor's Facebook ads.</h4>
 
 <p align="center">
-  <a href="https://img.shields.io/badge/Made%20with-JavaScript-yellow"><img src="https://img.shields.io/badge/Made%20with-JavaScript-yellow"></a>
   <a href="https://img.shields.io/badge/Made%20with-Python-blue">
     <img src="https://img.shields.io/badge/Made%20with-Python-blue"
          alt="Gitter">
   </a>
-  <a href="https://img.shields.io/tokei/lines/github/Bogo56/RecipeApp">
-      <img src="https://img.shields.io/tokei/lines/github/Bogo56/RecipeApp">
+  <a href="https://img.shields.io/tokei/lines/github/Bogo56/AdCapture_bot">
+      <img src="https://img.shields.io/tokei/lines/github/Bogo56/AdCapture_bot">
   </a>
-  <a href="https://img.shields.io/github/languages/count/Bogo56/RecipeApp?color=f">
-    <img src="https://img.shields.io/github/languages/count/Bogo56/RecipeApp?color=f">
+  <a href="https://img.shields.io/github/languages/count/Bogo56/AdCapture_bot?color=f">
+    <img src="https://img.shields.io/github/languages/count/Bogo56/AdCapture_bot?color=f">
   </a>
-  <a href="https://badgen.net/github/commits/Bogo56/RecipeApp">
-    <img src="https://badgen.net/github/commits/Bogo56/RecipeApp">
+  <a href="https://badgen.net/github/commits/Bogo56/AdCapture_bot">
+    <img src="https://badgen.net/github/commits/Bogo56/AdCapture_bot">
   </a>
 </p>
 
@@ -32,15 +31,13 @@
 ## Built With
 ###  Languages
 <p>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://res.cloudinary.com/dawb3psft/image/upload/v1647933330/Portfolio/kv-lang.png">
 <p>
   
 ### Frameworks
 <p>
-<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white">
+<img src="https://res.cloudinary.com/dawb3psft/image/upload/v1647933068/Portfolio/kivy.png">
 </p>
 
 ### Databases
@@ -50,10 +47,8 @@
 
 ### Additional Libraries and Technologies
 <p>
-  <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white">
-  <img src="https://img.shields.io/badge/OS-Ubuntu-orange?style=for-the-badge">
-   <img src="https://img.shields.io/badge/Security-JWT-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Web Scrape-Pandas-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Imaging-Pillow-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Web Scrape-Selenium-blue?style=for-the-badge">
 </p>
 
 ## About The Project
