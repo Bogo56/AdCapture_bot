@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
     email_sender=EmailSender
     email_sender.build_mail(recipient="email",
-                            attachment="D:\Programming\Work_Projects\ScreenShotApp(new)\Project\Ad_library_screens\screenshots_10_10\Ads_Preview_10_10.pdf",
+                            attachment="Ads_Preview_10_10.pdf",
                              )
     email_sender.send_mail()
 
